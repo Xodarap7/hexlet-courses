@@ -6,6 +6,7 @@ def memoized(function):
         if memoized_result is None:
             memoized_result = function(x)
             memory[x] = memoized_result
+
         return memoized_result
 
     return inner
@@ -14,6 +15,7 @@ def memoized(function):
 @memoized
 def f(x):
     print('Calculating...')
+
     return x * 10
 
 
