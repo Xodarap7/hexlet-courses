@@ -1,8 +1,8 @@
 def make_module(step=1) -> dict:
 
     return {
-        'inc': lambda x: x+step,
-        'dec': lambda x: x-step
+        'inc': lambda x: x + step,
+        'dec': lambda x: x - step
     }
 
 
