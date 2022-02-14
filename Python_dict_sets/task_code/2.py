@@ -10,6 +10,7 @@ EXAMPLE = {
 
 
 def build_query_string(parameters: dict) -> str:
+
     parameter_str = []
     parameter_keys = sorted(parameters.keys())
 

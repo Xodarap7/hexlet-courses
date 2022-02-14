@@ -21,7 +21,7 @@ def to_arabic(number):  # noqa: WPS210
     numbers = []
 
     for char in number:
-        numbers.append(DICTIONARY[char])
+        numbers.append(DICTIONARY.get(char, int(1)))
 
     shifted_numbers = numbers[1:] + numbers[-1:]
     result = 0
@@ -32,7 +32,7 @@ def to_arabic(number):  # noqa: WPS210
             result += previous
         else:
             result -= previous
-        print(result)
+
     if to_roman(result) != number:
         return False
 
@@ -40,6 +40,7 @@ def to_arabic(number):  # noqa: WPS210
 
 
 def to_roman(number: int) -> str:
+
     values = sorted(DICTIONARY.values())
     keys = list(DICTIONARY.keys())
     result = ''
@@ -47,14 +48,15 @@ def to_roman(number: int) -> str:
     while number > 0:
         if number >= 1000:
             result += 'M'
-            number = number - 1000
+            number -= 1000
 
         else:
             index = 0
+
             for index, value in enumerate(values):
                 if value > number:
                     result += f'{keys[index-1]}'
-                    number = number - values[index-1]
+                    number -= values[index-1]
                     index += 1
                     break
 
@@ -64,7 +66,8 @@ def to_roman(number: int) -> str:
 def main():
     print(to_roman(1))
     print(to_roman(3000))
-    print(to_arabic('CMXI'))
+    print(to_arabic('M'))
+    print(to_arabic('a'))
 
 
 if __name__ == '__main__':
