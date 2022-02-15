@@ -1,9 +1,10 @@
 from typing import List, Any
 
-NUMBERS_LISTS = List[Any]
+LIST_ITEMS = List[Any]
+LIST_NUMBERS = List[int]
 
 
-def odds_from_odds(elements: List[NUMBERS_LISTS]) -> List[NUMBERS_LISTS]:
+def odds_from_odds(elements: List[LIST_ITEMS]) -> List[LIST_ITEMS]:
     """
     Function changes the original element
     """
@@ -22,7 +23,7 @@ def odds_from_odds(elements: List[NUMBERS_LISTS]) -> List[NUMBERS_LISTS]:
     return result
 
 
-def find_to_delete(elem):
+def find_to_delete(elem: LIST_ITEMS) -> None:
     """
     Create list of index with elements to delete
     """
@@ -35,7 +36,7 @@ def find_to_delete(elem):
     delete_items(to_delete, elem)
 
 
-def delete_items(to_delete, elem):
+def delete_items(to_delete: LIST_NUMBERS, elem: LIST_ITEMS) -> None:
     """
     deleting an element by index
     """
@@ -45,7 +46,7 @@ def delete_items(to_delete, elem):
         elem.pop(item)
 
 
-def keep_odds_from_odds(elements: List[NUMBERS_LISTS]) -> None:
+def keep_odds_from_odds(elements: LIST_ITEMS) -> None:
     """
     Function does not change the original element
     """
