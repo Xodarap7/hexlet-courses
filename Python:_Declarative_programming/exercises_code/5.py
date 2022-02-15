@@ -11,11 +11,11 @@ def each2d(test, matrix: List[LIST_ITEMS]) -> bool:
     return all(all(test(item) for item in element)for element in matrix)
 
 
-def some2d(test, matrix):
+def some2d(test, matrix: List[LIST_ITEMS]) -> bool:
     return any(any(test(item) for item in element)for element in matrix)
 
 
-def sum2d(test, matrix):
+def sum2d(test, matrix: List[LIST_ITEMS]) -> int:
     return sum(sum(item for item in element if test(item))for element in matrix)
 
 
